@@ -1,0 +1,57 @@
+{
+  "name": "@hollyhr/api-client",
+  "version": "0.1.0-preview.4",
+  "description": "Official TypeScript client for the HollyHR public API.",
+  "type": "module",
+  "sideEffects": false,
+  "license": "MIT",
+  "homepage": "https://developers.hollyhr.com/typescript-sdk",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hollyhr/hollyhr-api-client.git"
+  },
+  "bugs": {
+    "url": "https://github.com/hollyhr/hollyhr-api-client/issues"
+  },
+  "keywords": [
+    "hollyhr",
+    "hr",
+    "hris",
+    "api-client",
+    "typescript",
+    "sdk"
+  ],
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "examples",
+    "README.md",
+    "LICENSE.md",
+    "package.json"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit && tsc -p tsconfig.tests.json --noEmit",
+    "test": "vitest run",
+    "examples:check": "for file in examples/*.mjs; do node --check \"$file\"; done",
+    "check": "npm run typecheck && npm test && npm run build && npm run examples:check"
+  },
+  "devDependencies": {
+    "@types/node": "22.14.0",
+    "typescript": "~5.8.3",
+    "vitest": "4.1.10"
+  }
+}
