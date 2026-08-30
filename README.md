@@ -5,6 +5,9 @@ Official preview TypeScript client for the HollyHR public API.
 - [Developer documentation](https://developers.hollyhr.com/)
 - [Versioned OpenAPI contract](./openapi/openapi.v1.yaml)
 - [npm package](https://www.npmjs.com/package/@hollyhr/api-client)
+- [Runnable API, webhook and MCP examples](https://github.com/hollyhr/hollyhr-api-examples)
+- [Public Postman workspace](https://www.postman.com/hollyhr/workspace/hollyhr-public-api~73d93b69-5cda-44a4-b491-db7062f974bd/overview)
+- [Hosted MCP discovery](https://github.com/hollyhr/hollyhr-mcp)
 - [Issues](https://github.com/hollyhr/hollyhr-api-client/issues)
 
 ## Install
