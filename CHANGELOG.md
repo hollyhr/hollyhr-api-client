@@ -3,6 +3,15 @@
 The complete public API and SDK changelog is maintained at
 [developers.hollyhr.com/changelog](https://developers.hollyhr.com/changelog).
 
+## 0.1.0-preview.6 - prepared
+
+- Preserved the strong `HollyHR-Resource-ETag` write validator separately
+  from hosting-layer cache ETags.
+- Taught the client to prefer that resource validator, accept a standard
+  strong ETag as a compatibility fallback, and fail closed when only a weak
+  cache ETag is returned.
+- Updated the matching OpenAPI contract, tests and safe-write guidance.
+
 ## 0.1.0-preview.5 - prepared
 
 - Added public repository and GitHub issue metadata for npm consumers.

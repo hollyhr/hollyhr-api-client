@@ -10100,6 +10100,12 @@ paths:
               schema:
                 type: string
               description: Strong version tag for cache validation.
+            HollyHR-Resource-ETag:
+              schema:
+                type: string
+              description:
+                Strong resource validator for If-Match conditional writes. Unlike the standard ETag
+                cache validator, hosting layers must preserve this value unchanged.
           content:
             application/json:
               schema:
@@ -10111,6 +10117,12 @@ paths:
               schema:
                 type: string
               description: Current strong version tag.
+            HollyHR-Resource-ETag:
+              schema:
+                type: string
+              description:
+                Strong resource validator for If-Match conditional writes. Unlike the standard ETag
+                cache validator, hosting layers must preserve this value unchanged.
         "400":
           description: Invalid request.
           content:
@@ -10198,11 +10210,15 @@ paths:
           in: header
         - schema:
             type: string
-            description: Required for conditional updates. Use the exact strong ETag returned by the
-              corresponding resource GET endpoint.
+            description:
+              Required for conditional updates. Use the exact HollyHR-Resource-ETag returned by the
+              corresponding resource GET endpoint. The standard ETag remains available for HTTP
+              cache validation and may be weakened by a hosting layer.
           required: true
-          description: Required for conditional updates. Use the exact strong ETag returned by the
-            corresponding resource GET endpoint.
+          description:
+            Required for conditional updates. Use the exact HollyHR-Resource-ETag returned by the
+            corresponding resource GET endpoint. The standard ETag remains available for HTTP cache
+            validation and may be weakened by a hosting layer.
           name: If-Match
           in: header
       requestBody:
@@ -10219,6 +10235,12 @@ paths:
               schema:
                 type: string
               description: New strong version tag after the update.
+            HollyHR-Resource-ETag:
+              schema:
+                type: string
+              description:
+                Strong resource validator for If-Match conditional writes. Unlike the standard ETag
+                cache validator, hosting layers must preserve this value unchanged.
           content:
             application/json:
               schema:
@@ -10328,6 +10350,12 @@ paths:
               schema:
                 type: string
               description: Strong version tag for cache validation.
+            HollyHR-Resource-ETag:
+              schema:
+                type: string
+              description:
+                Strong resource validator for If-Match conditional writes. Unlike the standard ETag
+                cache validator, hosting layers must preserve this value unchanged.
           content:
             application/json:
               schema:
@@ -10339,6 +10367,12 @@ paths:
               schema:
                 type: string
               description: Current strong version tag.
+            HollyHR-Resource-ETag:
+              schema:
+                type: string
+              description:
+                Strong resource validator for If-Match conditional writes. Unlike the standard ETag
+                cache validator, hosting layers must preserve this value unchanged.
         "400":
           description: Invalid request.
           content:
@@ -10506,6 +10540,12 @@ paths:
               schema:
                 type: string
               description: Strong version tag for cache validation.
+            HollyHR-Resource-ETag:
+              schema:
+                type: string
+              description:
+                Strong resource validator for If-Match conditional writes. Unlike the standard ETag
+                cache validator, hosting layers must preserve this value unchanged.
           content:
             application/json:
               schema:
@@ -10517,6 +10557,12 @@ paths:
               schema:
                 type: string
               description: Current strong version tag.
+            HollyHR-Resource-ETag:
+              schema:
+                type: string
+              description:
+                Strong resource validator for If-Match conditional writes. Unlike the standard ETag
+                cache validator, hosting layers must preserve this value unchanged.
         "400":
           description: Invalid request.
           content:
@@ -10676,6 +10722,12 @@ paths:
               schema:
                 type: string
               description: Strong version tag for conditional updates.
+            HollyHR-Resource-ETag:
+              schema:
+                type: string
+              description:
+                Strong resource validator for If-Match conditional writes. Unlike the standard ETag
+                cache validator, hosting layers must preserve this value unchanged.
           content:
             application/json:
               schema:
@@ -10687,6 +10739,12 @@ paths:
               schema:
                 type: string
               description: Current strong version tag.
+            HollyHR-Resource-ETag:
+              schema:
+                type: string
+              description:
+                Strong resource validator for If-Match conditional writes. Unlike the standard ETag
+                cache validator, hosting layers must preserve this value unchanged.
         "400":
           description: Invalid request.
           content:
@@ -10773,11 +10831,15 @@ paths:
           in: header
         - schema:
             type: string
-            description: Required for conditional updates. Use the exact strong ETag returned by the
-              corresponding resource GET endpoint.
+            description:
+              Required for conditional updates. Use the exact HollyHR-Resource-ETag returned by the
+              corresponding resource GET endpoint. The standard ETag remains available for HTTP
+              cache validation and may be weakened by a hosting layer.
           required: true
-          description: Required for conditional updates. Use the exact strong ETag returned by the
-            corresponding resource GET endpoint.
+          description:
+            Required for conditional updates. Use the exact HollyHR-Resource-ETag returned by the
+            corresponding resource GET endpoint. The standard ETag remains available for HTTP cache
+            validation and may be weakened by a hosting layer.
           name: If-Match
           in: header
       requestBody:
@@ -10794,6 +10856,12 @@ paths:
               schema:
                 type: string
               description: New strong version tag after the update.
+            HollyHR-Resource-ETag:
+              schema:
+                type: string
+              description:
+                Strong resource validator for If-Match conditional writes. Unlike the standard ETag
+                cache validator, hosting layers must preserve this value unchanged.
           content:
             application/json:
               schema:
@@ -11195,11 +11263,15 @@ paths:
           in: header
         - schema:
             type: string
-            description: Required for conditional updates. Use the exact strong ETag returned by the
-              corresponding resource GET endpoint.
+            description:
+              Required for conditional updates. Use the exact HollyHR-Resource-ETag returned by the
+              corresponding resource GET endpoint. The standard ETag remains available for HTTP
+              cache validation and may be weakened by a hosting layer.
           required: true
-          description: Required for conditional updates. Use the exact strong ETag returned by the
-            corresponding resource GET endpoint.
+          description:
+            Required for conditional updates. Use the exact HollyHR-Resource-ETag returned by the
+            corresponding resource GET endpoint. The standard ETag remains available for HTTP cache
+            validation and may be weakened by a hosting layer.
           name: If-Match
           in: header
       requestBody:
@@ -11216,6 +11288,12 @@ paths:
               schema:
                 type: string
               description: New strong version tag after the lifecycle action.
+            HollyHR-Resource-ETag:
+              schema:
+                type: string
+              description:
+                Strong resource validator for If-Match conditional writes. Unlike the standard ETag
+                cache validator, hosting layers must preserve this value unchanged.
           content:
             application/json:
               schema:
@@ -11324,11 +11402,15 @@ paths:
           in: header
         - schema:
             type: string
-            description: Required for conditional updates. Use the exact strong ETag returned by the
-              corresponding resource GET endpoint.
+            description:
+              Required for conditional updates. Use the exact HollyHR-Resource-ETag returned by the
+              corresponding resource GET endpoint. The standard ETag remains available for HTTP
+              cache validation and may be weakened by a hosting layer.
           required: true
-          description: Required for conditional updates. Use the exact strong ETag returned by the
-            corresponding resource GET endpoint.
+          description:
+            Required for conditional updates. Use the exact HollyHR-Resource-ETag returned by the
+            corresponding resource GET endpoint. The standard ETag remains available for HTTP cache
+            validation and may be weakened by a hosting layer.
           name: If-Match
           in: header
       requestBody:
@@ -11345,6 +11427,12 @@ paths:
               schema:
                 type: string
               description: New strong version tag after the lifecycle action.
+            HollyHR-Resource-ETag:
+              schema:
+                type: string
+              description:
+                Strong resource validator for If-Match conditional writes. Unlike the standard ETag
+                cache validator, hosting layers must preserve this value unchanged.
           content:
             application/json:
               schema:
@@ -11455,6 +11543,12 @@ paths:
               schema:
                 type: string
               description: Strong version tag for the employment projection.
+            HollyHR-Resource-ETag:
+              schema:
+                type: string
+              description:
+                Strong resource validator for If-Match conditional writes. Unlike the standard ETag
+                cache validator, hosting layers must preserve this value unchanged.
           content:
             application/json:
               schema:
@@ -11465,6 +11559,12 @@ paths:
             ETag:
               schema:
                 type: string
+            HollyHR-Resource-ETag:
+              schema:
+                type: string
+              description:
+                Strong resource validator for If-Match conditional writes. Unlike the standard ETag
+                cache validator, hosting layers must preserve this value unchanged.
         "400":
           description: Invalid request.
           content:
@@ -11551,11 +11651,15 @@ paths:
           in: header
         - schema:
             type: string
-            description: Required for conditional updates. Use the exact strong ETag returned by the
-              corresponding resource GET endpoint.
+            description:
+              Required for conditional updates. Use the exact HollyHR-Resource-ETag returned by the
+              corresponding resource GET endpoint. The standard ETag remains available for HTTP
+              cache validation and may be weakened by a hosting layer.
           required: true
-          description: Required for conditional updates. Use the exact strong ETag returned by the
-            corresponding resource GET endpoint.
+          description:
+            Required for conditional updates. Use the exact HollyHR-Resource-ETag returned by the
+            corresponding resource GET endpoint. The standard ETag remains available for HTTP cache
+            validation and may be weakened by a hosting layer.
           name: If-Match
           in: header
       requestBody:
@@ -11572,6 +11676,12 @@ paths:
               schema:
                 type: string
               description: New strong version tag after the update.
+            HollyHR-Resource-ETag:
+              schema:
+                type: string
+              description:
+                Strong resource validator for If-Match conditional writes. Unlike the standard ETag
+                cache validator, hosting layers must preserve this value unchanged.
           content:
             application/json:
               schema:
@@ -11787,6 +11897,12 @@ paths:
               schema:
                 type: string
               description: Strong version tag for the created employment-history entry.
+            HollyHR-Resource-ETag:
+              schema:
+                type: string
+              description:
+                Strong resource validator for If-Match conditional writes. Unlike the standard ETag
+                cache validator, hosting layers must preserve this value unchanged.
           content:
             application/json:
               schema:
@@ -11892,6 +12008,12 @@ paths:
               schema:
                 type: string
               description: Strong version tag for the employment-history row.
+            HollyHR-Resource-ETag:
+              schema:
+                type: string
+              description:
+                Strong resource validator for If-Match conditional writes. Unlike the standard ETag
+                cache validator, hosting layers must preserve this value unchanged.
           content:
             application/json:
               schema:
@@ -11903,6 +12025,12 @@ paths:
               schema:
                 type: string
               description: Current strong version tag.
+            HollyHR-Resource-ETag:
+              schema:
+                type: string
+              description:
+                Strong resource validator for If-Match conditional writes. Unlike the standard ETag
+                cache validator, hosting layers must preserve this value unchanged.
         "400":
           description: Invalid request.
           content:
@@ -12000,11 +12128,15 @@ paths:
           in: header
         - schema:
             type: string
-            description: Required for conditional updates. Use the exact strong ETag returned by the
-              corresponding resource GET endpoint.
+            description:
+              Required for conditional updates. Use the exact HollyHR-Resource-ETag returned by the
+              corresponding resource GET endpoint. The standard ETag remains available for HTTP
+              cache validation and may be weakened by a hosting layer.
           required: true
-          description: Required for conditional updates. Use the exact strong ETag returned by the
-            corresponding resource GET endpoint.
+          description:
+            Required for conditional updates. Use the exact HollyHR-Resource-ETag returned by the
+            corresponding resource GET endpoint. The standard ETag remains available for HTTP cache
+            validation and may be weakened by a hosting layer.
           name: If-Match
           in: header
       requestBody:
@@ -12021,6 +12153,12 @@ paths:
               schema:
                 type: string
               description: New strong version tag after the correction.
+            HollyHR-Resource-ETag:
+              schema:
+                type: string
+              description:
+                Strong resource validator for If-Match conditional writes. Unlike the standard ETag
+                cache validator, hosting layers must preserve this value unchanged.
           content:
             application/json:
               schema:
@@ -12262,6 +12400,12 @@ paths:
               schema:
                 type: string
               description: Strong version tag for conditional updates.
+            HollyHR-Resource-ETag:
+              schema:
+                type: string
+              description:
+                Strong resource validator for If-Match conditional writes. Unlike the standard ETag
+                cache validator, hosting layers must preserve this value unchanged.
           content:
             application/json:
               schema:
@@ -12447,6 +12591,12 @@ paths:
               schema:
                 type: string
               description: Strong version tag for conditional updates.
+            HollyHR-Resource-ETag:
+              schema:
+                type: string
+              description:
+                Strong resource validator for If-Match conditional writes. Unlike the standard ETag
+                cache validator, hosting layers must preserve this value unchanged.
           content:
             application/json:
               schema:
@@ -12458,6 +12608,12 @@ paths:
               schema:
                 type: string
               description: Current strong version tag.
+            HollyHR-Resource-ETag:
+              schema:
+                type: string
+              description:
+                Strong resource validator for If-Match conditional writes. Unlike the standard ETag
+                cache validator, hosting layers must preserve this value unchanged.
         "400":
           description: Invalid request.
           content:
@@ -12545,11 +12701,15 @@ paths:
           in: header
         - schema:
             type: string
-            description: Required for conditional updates. Use the exact strong ETag returned by the
-              corresponding resource GET endpoint.
+            description:
+              Required for conditional updates. Use the exact HollyHR-Resource-ETag returned by the
+              corresponding resource GET endpoint. The standard ETag remains available for HTTP
+              cache validation and may be weakened by a hosting layer.
           required: true
-          description: Required for conditional updates. Use the exact strong ETag returned by the
-            corresponding resource GET endpoint.
+          description:
+            Required for conditional updates. Use the exact HollyHR-Resource-ETag returned by the
+            corresponding resource GET endpoint. The standard ETag remains available for HTTP cache
+            validation and may be weakened by a hosting layer.
           name: If-Match
           in: header
       requestBody:
@@ -12566,6 +12726,12 @@ paths:
               schema:
                 type: string
               description: New strong version tag after the update.
+            HollyHR-Resource-ETag:
+              schema:
+                type: string
+              description:
+                Strong resource validator for If-Match conditional writes. Unlike the standard ETag
+                cache validator, hosting layers must preserve this value unchanged.
           content:
             application/json:
               schema:
@@ -12676,11 +12842,15 @@ paths:
           in: header
         - schema:
             type: string
-            description: Required for conditional updates. Use the exact strong ETag returned by the
-              corresponding resource GET endpoint.
+            description:
+              Required for conditional updates. Use the exact HollyHR-Resource-ETag returned by the
+              corresponding resource GET endpoint. The standard ETag remains available for HTTP
+              cache validation and may be weakened by a hosting layer.
           required: true
-          description: Required for conditional updates. Use the exact strong ETag returned by the
-            corresponding resource GET endpoint.
+          description:
+            Required for conditional updates. Use the exact HollyHR-Resource-ETag returned by the
+            corresponding resource GET endpoint. The standard ETag remains available for HTTP cache
+            validation and may be weakened by a hosting layer.
           name: If-Match
           in: header
       requestBody:
@@ -12697,6 +12867,12 @@ paths:
               schema:
                 type: string
               description: New strong version tag after the decision.
+            HollyHR-Resource-ETag:
+              schema:
+                type: string
+              description:
+                Strong resource validator for If-Match conditional writes. Unlike the standard ETag
+                cache validator, hosting layers must preserve this value unchanged.
           content:
             application/json:
               schema:
@@ -12807,11 +12983,15 @@ paths:
           in: header
         - schema:
             type: string
-            description: Required for conditional updates. Use the exact strong ETag returned by the
-              corresponding resource GET endpoint.
+            description:
+              Required for conditional updates. Use the exact HollyHR-Resource-ETag returned by the
+              corresponding resource GET endpoint. The standard ETag remains available for HTTP
+              cache validation and may be weakened by a hosting layer.
           required: true
-          description: Required for conditional updates. Use the exact strong ETag returned by the
-            corresponding resource GET endpoint.
+          description:
+            Required for conditional updates. Use the exact HollyHR-Resource-ETag returned by the
+            corresponding resource GET endpoint. The standard ETag remains available for HTTP cache
+            validation and may be weakened by a hosting layer.
           name: If-Match
           in: header
       requestBody:
@@ -12828,6 +13008,12 @@ paths:
               schema:
                 type: string
               description: New strong version tag after the decision.
+            HollyHR-Resource-ETag:
+              schema:
+                type: string
+              description:
+                Strong resource validator for If-Match conditional writes. Unlike the standard ETag
+                cache validator, hosting layers must preserve this value unchanged.
           content:
             application/json:
               schema:
@@ -12937,11 +13123,15 @@ paths:
           in: header
         - schema:
             type: string
-            description: Required for conditional updates. Use the exact strong ETag returned by the
-              corresponding resource GET endpoint.
+            description:
+              Required for conditional updates. Use the exact HollyHR-Resource-ETag returned by the
+              corresponding resource GET endpoint. The standard ETag remains available for HTTP
+              cache validation and may be weakened by a hosting layer.
           required: true
-          description: Required for conditional updates. Use the exact strong ETag returned by the
-            corresponding resource GET endpoint.
+          description:
+            Required for conditional updates. Use the exact HollyHR-Resource-ETag returned by the
+            corresponding resource GET endpoint. The standard ETag remains available for HTTP cache
+            validation and may be weakened by a hosting layer.
           name: If-Match
           in: header
       requestBody:
@@ -13053,6 +13243,12 @@ paths:
               schema:
                 type: string
               description: Strong version tag for conditional updates.
+            HollyHR-Resource-ETag:
+              schema:
+                type: string
+              description:
+                Strong resource validator for If-Match conditional writes. Unlike the standard ETag
+                cache validator, hosting layers must preserve this value unchanged.
           content:
             application/json:
               schema:
@@ -13064,6 +13260,12 @@ paths:
               schema:
                 type: string
               description: Current strong version tag.
+            HollyHR-Resource-ETag:
+              schema:
+                type: string
+              description:
+                Strong resource validator for If-Match conditional writes. Unlike the standard ETag
+                cache validator, hosting layers must preserve this value unchanged.
         "400":
           description: Invalid request.
           content:
@@ -13141,11 +13343,15 @@ paths:
           in: header
         - schema:
             type: string
-            description: Required for conditional updates. Use the exact strong ETag returned by the
-              corresponding resource GET endpoint.
+            description:
+              Required for conditional updates. Use the exact HollyHR-Resource-ETag returned by the
+              corresponding resource GET endpoint. The standard ETag remains available for HTTP
+              cache validation and may be weakened by a hosting layer.
           required: true
-          description: Required for conditional updates. Use the exact strong ETag returned by the
-            corresponding resource GET endpoint.
+          description:
+            Required for conditional updates. Use the exact HollyHR-Resource-ETag returned by the
+            corresponding resource GET endpoint. The standard ETag remains available for HTTP cache
+            validation and may be weakened by a hosting layer.
           name: If-Match
           in: header
       requestBody:
@@ -13162,6 +13368,12 @@ paths:
               schema:
                 type: string
               description: New strong version tag after the update.
+            HollyHR-Resource-ETag:
+              schema:
+                type: string
+              description:
+                Strong resource validator for If-Match conditional writes. Unlike the standard ETag
+                cache validator, hosting layers must preserve this value unchanged.
           content:
             application/json:
               schema:
@@ -13931,6 +14143,12 @@ paths:
               schema:
                 type: string
               description: Strong version tag for conditional updates.
+            HollyHR-Resource-ETag:
+              schema:
+                type: string
+              description:
+                Strong resource validator for If-Match conditional writes. Unlike the standard ETag
+                cache validator, hosting layers must preserve this value unchanged.
           content:
             application/json:
               schema:
@@ -14023,6 +14241,12 @@ paths:
               schema:
                 type: string
               description: Strong version tag for cache validation.
+            HollyHR-Resource-ETag:
+              schema:
+                type: string
+              description:
+                Strong resource validator for If-Match conditional writes. Unlike the standard ETag
+                cache validator, hosting layers must preserve this value unchanged.
           content:
             application/json:
               schema:
@@ -14034,6 +14258,12 @@ paths:
               schema:
                 type: string
               description: Current strong version tag.
+            HollyHR-Resource-ETag:
+              schema:
+                type: string
+              description:
+                Strong resource validator for If-Match conditional writes. Unlike the standard ETag
+                cache validator, hosting layers must preserve this value unchanged.
         "400":
           description: Invalid request.
           content:
@@ -14120,11 +14350,15 @@ paths:
           in: header
         - schema:
             type: string
-            description: Required for conditional updates. Use the exact strong ETag returned by the
-              corresponding resource GET endpoint.
+            description:
+              Required for conditional updates. Use the exact HollyHR-Resource-ETag returned by the
+              corresponding resource GET endpoint. The standard ETag remains available for HTTP
+              cache validation and may be weakened by a hosting layer.
           required: true
-          description: Required for conditional updates. Use the exact strong ETag returned by the
-            corresponding resource GET endpoint.
+          description:
+            Required for conditional updates. Use the exact HollyHR-Resource-ETag returned by the
+            corresponding resource GET endpoint. The standard ETag remains available for HTTP cache
+            validation and may be weakened by a hosting layer.
           name: If-Match
           in: header
       requestBody:
@@ -14141,6 +14375,12 @@ paths:
               schema:
                 type: string
               description: New strong version tag after the update.
+            HollyHR-Resource-ETag:
+              schema:
+                type: string
+              description:
+                Strong resource validator for If-Match conditional writes. Unlike the standard ETag
+                cache validator, hosting layers must preserve this value unchanged.
           content:
             application/json:
               schema:
@@ -14251,11 +14491,15 @@ paths:
           in: header
         - schema:
             type: string
-            description: Required for conditional updates. Use the exact strong ETag returned by the
-              corresponding resource GET endpoint.
+            description:
+              Required for conditional updates. Use the exact HollyHR-Resource-ETag returned by the
+              corresponding resource GET endpoint. The standard ETag remains available for HTTP
+              cache validation and may be weakened by a hosting layer.
           required: true
-          description: Required for conditional updates. Use the exact strong ETag returned by the
-            corresponding resource GET endpoint.
+          description:
+            Required for conditional updates. Use the exact HollyHR-Resource-ETag returned by the
+            corresponding resource GET endpoint. The standard ETag remains available for HTTP cache
+            validation and may be weakened by a hosting layer.
           name: If-Match
           in: header
       responses:
@@ -14369,11 +14613,15 @@ paths:
           in: header
         - schema:
             type: string
-            description: Required for conditional updates. Use the exact strong ETag returned by the
-              corresponding resource GET endpoint.
+            description:
+              Required for conditional updates. Use the exact HollyHR-Resource-ETag returned by the
+              corresponding resource GET endpoint. The standard ETag remains available for HTTP
+              cache validation and may be weakened by a hosting layer.
           required: true
-          description: Required for conditional updates. Use the exact strong ETag returned by the
-            corresponding resource GET endpoint.
+          description:
+            Required for conditional updates. Use the exact HollyHR-Resource-ETag returned by the
+            corresponding resource GET endpoint. The standard ETag remains available for HTTP cache
+            validation and may be weakened by a hosting layer.
           name: If-Match
           in: header
       responses:
@@ -14563,6 +14811,12 @@ paths:
               schema:
                 type: string
               description: Strong version tag for conditional updates.
+            HollyHR-Resource-ETag:
+              schema:
+                type: string
+              description:
+                Strong resource validator for If-Match conditional writes. Unlike the standard ETag
+                cache validator, hosting layers must preserve this value unchanged.
           content:
             application/json:
               schema:
@@ -14653,6 +14907,12 @@ paths:
               schema:
                 type: string
               description: Strong version tag for conditional updates.
+            HollyHR-Resource-ETag:
+              schema:
+                type: string
+              description:
+                Strong resource validator for If-Match conditional writes. Unlike the standard ETag
+                cache validator, hosting layers must preserve this value unchanged.
           content:
             application/json:
               schema:
@@ -14664,6 +14924,12 @@ paths:
               schema:
                 type: string
               description: Current strong version tag.
+            HollyHR-Resource-ETag:
+              schema:
+                type: string
+              description:
+                Strong resource validator for If-Match conditional writes. Unlike the standard ETag
+                cache validator, hosting layers must preserve this value unchanged.
         "400":
           description: Invalid request.
           content:
@@ -14749,11 +15015,15 @@ paths:
           in: header
         - schema:
             type: string
-            description: Required for conditional updates. Use the exact strong ETag returned by the
-              corresponding resource GET endpoint.
+            description:
+              Required for conditional updates. Use the exact HollyHR-Resource-ETag returned by the
+              corresponding resource GET endpoint. The standard ETag remains available for HTTP
+              cache validation and may be weakened by a hosting layer.
           required: true
-          description: Required for conditional updates. Use the exact strong ETag returned by the
-            corresponding resource GET endpoint.
+          description:
+            Required for conditional updates. Use the exact HollyHR-Resource-ETag returned by the
+            corresponding resource GET endpoint. The standard ETag remains available for HTTP cache
+            validation and may be weakened by a hosting layer.
           name: If-Match
           in: header
       requestBody:
@@ -14770,6 +15040,12 @@ paths:
               schema:
                 type: string
               description: New strong version tag after the update.
+            HollyHR-Resource-ETag:
+              schema:
+                type: string
+              description:
+                Strong resource validator for If-Match conditional writes. Unlike the standard ETag
+                cache validator, hosting layers must preserve this value unchanged.
           content:
             application/json:
               schema:
@@ -14879,11 +15155,15 @@ paths:
           in: header
         - schema:
             type: string
-            description: Required for conditional updates. Use the exact strong ETag returned by the
-              corresponding resource GET endpoint.
+            description:
+              Required for conditional updates. Use the exact HollyHR-Resource-ETag returned by the
+              corresponding resource GET endpoint. The standard ETag remains available for HTTP
+              cache validation and may be weakened by a hosting layer.
           required: true
-          description: Required for conditional updates. Use the exact strong ETag returned by the
-            corresponding resource GET endpoint.
+          description:
+            Required for conditional updates. Use the exact HollyHR-Resource-ETag returned by the
+            corresponding resource GET endpoint. The standard ETag remains available for HTTP cache
+            validation and may be weakened by a hosting layer.
           name: If-Match
           in: header
       responses:
@@ -15321,6 +15601,12 @@ paths:
               schema:
                 type: string
               description: Strong version tag for conditional updates.
+            HollyHR-Resource-ETag:
+              schema:
+                type: string
+              description:
+                Strong resource validator for If-Match conditional writes. Unlike the standard ETag
+                cache validator, hosting layers must preserve this value unchanged.
           content:
             application/json:
               schema:
@@ -15407,6 +15693,12 @@ paths:
               schema:
                 type: string
               description: Strong version tag for conditional updates.
+            HollyHR-Resource-ETag:
+              schema:
+                type: string
+              description:
+                Strong resource validator for If-Match conditional writes. Unlike the standard ETag
+                cache validator, hosting layers must preserve this value unchanged.
           content:
             application/json:
               schema:
@@ -15418,6 +15710,12 @@ paths:
               schema:
                 type: string
               description: Current strong version tag.
+            HollyHR-Resource-ETag:
+              schema:
+                type: string
+              description:
+                Strong resource validator for If-Match conditional writes. Unlike the standard ETag
+                cache validator, hosting layers must preserve this value unchanged.
         "400":
           description: Invalid request.
           content:
@@ -15504,11 +15802,15 @@ paths:
           in: header
         - schema:
             type: string
-            description: Required for conditional updates. Use the exact strong ETag returned by the
-              corresponding resource GET endpoint.
+            description:
+              Required for conditional updates. Use the exact HollyHR-Resource-ETag returned by the
+              corresponding resource GET endpoint. The standard ETag remains available for HTTP
+              cache validation and may be weakened by a hosting layer.
           required: true
-          description: Required for conditional updates. Use the exact strong ETag returned by the
-            corresponding resource GET endpoint.
+          description:
+            Required for conditional updates. Use the exact HollyHR-Resource-ETag returned by the
+            corresponding resource GET endpoint. The standard ETag remains available for HTTP cache
+            validation and may be weakened by a hosting layer.
           name: If-Match
           in: header
       requestBody:
@@ -15525,6 +15827,12 @@ paths:
               schema:
                 type: string
               description: New strong version tag after the update.
+            HollyHR-Resource-ETag:
+              schema:
+                type: string
+              description:
+                Strong resource validator for If-Match conditional writes. Unlike the standard ETag
+                cache validator, hosting layers must preserve this value unchanged.
           content:
             application/json:
               schema:
@@ -15633,11 +15941,15 @@ paths:
           in: header
         - schema:
             type: string
-            description: Required for conditional updates. Use the exact strong ETag returned by the
-              corresponding resource GET endpoint.
+            description:
+              Required for conditional updates. Use the exact HollyHR-Resource-ETag returned by the
+              corresponding resource GET endpoint. The standard ETag remains available for HTTP
+              cache validation and may be weakened by a hosting layer.
           required: true
-          description: Required for conditional updates. Use the exact strong ETag returned by the
-            corresponding resource GET endpoint.
+          description:
+            Required for conditional updates. Use the exact HollyHR-Resource-ETag returned by the
+            corresponding resource GET endpoint. The standard ETag remains available for HTTP cache
+            validation and may be weakened by a hosting layer.
           name: If-Match
           in: header
       responses:
@@ -15648,6 +15960,12 @@ paths:
               schema:
                 type: string
               description: New strong version tag after the archive.
+            HollyHR-Resource-ETag:
+              schema:
+                type: string
+              description:
+                Strong resource validator for If-Match conditional writes. Unlike the standard ETag
+                cache validator, hosting layers must preserve this value unchanged.
           content:
             application/json:
               schema:
@@ -15954,6 +16272,12 @@ paths:
               schema:
                 type: string
               description: Strong version tag for conditional updates.
+            HollyHR-Resource-ETag:
+              schema:
+                type: string
+              description:
+                Strong resource validator for If-Match conditional writes. Unlike the standard ETag
+                cache validator, hosting layers must preserve this value unchanged.
           content:
             application/json:
               schema:
@@ -15965,6 +16289,12 @@ paths:
               schema:
                 type: string
               description: Current strong version tag.
+            HollyHR-Resource-ETag:
+              schema:
+                type: string
+              description:
+                Strong resource validator for If-Match conditional writes. Unlike the standard ETag
+                cache validator, hosting layers must preserve this value unchanged.
         "400":
           description: Invalid request.
           content:
@@ -16049,11 +16379,15 @@ paths:
           in: header
         - schema:
             type: string
-            description: Required for conditional updates. Use the exact strong ETag returned by the
-              corresponding resource GET endpoint.
+            description:
+              Required for conditional updates. Use the exact HollyHR-Resource-ETag returned by the
+              corresponding resource GET endpoint. The standard ETag remains available for HTTP
+              cache validation and may be weakened by a hosting layer.
           required: true
-          description: Required for conditional updates. Use the exact strong ETag returned by the
-            corresponding resource GET endpoint.
+          description:
+            Required for conditional updates. Use the exact HollyHR-Resource-ETag returned by the
+            corresponding resource GET endpoint. The standard ETag remains available for HTTP cache
+            validation and may be weakened by a hosting layer.
           name: If-Match
           in: header
       requestBody:
@@ -16070,6 +16404,12 @@ paths:
               schema:
                 type: string
               description: New strong version tag after the update.
+            HollyHR-Resource-ETag:
+              schema:
+                type: string
+              description:
+                Strong resource validator for If-Match conditional writes. Unlike the standard ETag
+                cache validator, hosting layers must preserve this value unchanged.
           content:
             application/json:
               schema:
@@ -16177,11 +16517,15 @@ paths:
           in: header
         - schema:
             type: string
-            description: Required for conditional updates. Use the exact strong ETag returned by the
-              corresponding resource GET endpoint.
+            description:
+              Required for conditional updates. Use the exact HollyHR-Resource-ETag returned by the
+              corresponding resource GET endpoint. The standard ETag remains available for HTTP
+              cache validation and may be weakened by a hosting layer.
           required: true
-          description: Required for conditional updates. Use the exact strong ETag returned by the
-            corresponding resource GET endpoint.
+          description:
+            Required for conditional updates. Use the exact HollyHR-Resource-ETag returned by the
+            corresponding resource GET endpoint. The standard ETag remains available for HTTP cache
+            validation and may be weakened by a hosting layer.
           name: If-Match
           in: header
       responses:
@@ -16192,6 +16536,12 @@ paths:
               schema:
                 type: string
               description: New strong version tag after the disable operation.
+            HollyHR-Resource-ETag:
+              schema:
+                type: string
+              description:
+                Strong resource validator for If-Match conditional writes. Unlike the standard ETag
+                cache validator, hosting layers must preserve this value unchanged.
           content:
             application/json:
               schema:

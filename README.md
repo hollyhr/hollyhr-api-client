@@ -76,7 +76,9 @@ for await (const person of hollyhr.paginate("/people", { query: { limit: 50 } })
 ## Safe writes
 
 Use idempotency keys for creates and other retryable writes. Use `If-Match`
-when updating resources that return an ETag.
+when updating resources that return a write-safe resource validator. SDK
+responses expose `HollyHR-Resource-ETag` as `response.etag`, fall back to a
+standard strong `ETag`, and never present a weak cache ETag as write-safe.
 
 ```ts
 import { createIdempotencyKey } from "@hollyhr/api-client";
@@ -89,7 +91,8 @@ await hollyhr.patch("/people/{personId}", {
 });
 ```
 
-The package includes a conditional update example that first reads the ETag:
+The package includes a conditional update example that first reads the
+write-safe validator:
 
 ```bash
 export HOLLYHR_PERSON_ID="7k3m9q2vx6rt"
@@ -100,7 +103,7 @@ node node_modules/@hollyhr/api-client/examples/safe-update-person.mjs
 ### Governed time-off decisions
 
 Approve or decline one pending standard time-off request only after fetching
-its current ETag. The operation requires an explicitly granted
+its current write-safe validator. The operation requires an explicitly granted
 `time_off:write` scope, `If-Match`, and an idempotency key. Decline may include
 an optional private response note.
 
@@ -112,8 +115,8 @@ export HOLLYHR_TIME_OFF_DECISION="approve" # or decline
 node node_modules/@hollyhr/api-client/examples/governed-time-off-decision.mjs
 ```
 
-The example stops if the read does not return an ETag and accepts only the
-explicit `approve` or `decline` decision values.
+The example stops if the read does not return a write-safe validator and
+accepts only the explicit `approve` or `decline` decision values.
 
 ## Webhook signatures
 

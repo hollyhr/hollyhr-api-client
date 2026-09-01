@@ -21,7 +21,8 @@ describe("HollyHrApiClient", () => {
         status: 200,
         headers: {
           "Content-Type": "application/json",
-          ETag: '"etag-1"',
+          ETag: 'W/"etag-1"',
+          "HollyHR-Resource-ETag": '"etag-1"',
           "X-Request-Id": "req_123",
           "RateLimit-Limit": "120",
           "RateLimit-Remaining": "119",
@@ -59,6 +60,28 @@ describe("HollyHrApiClient", () => {
     expect(new Headers(init.headers).get("Authorization")).toBe("Bearer hhr_test_123");
     expect(new Headers(init.headers).get("Idempotency-Key")).toBe("idem_123");
     expect(new Headers(init.headers).get("If-Match")).toBe('"etag-0"');
+  });
+
+  it("does not expose a weak cache ETag as a write-safe validator", async () => {
+    const fetchMock = vi.fn().mockResolvedValue(
+      new Response(JSON.stringify({ data: { id: "7k3m9q2vx6rt" } }), {
+        status: 200,
+        headers: {
+          "Content-Type": "application/json",
+          ETag: 'W/"etag-1"',
+        },
+      }),
+    );
+    const client = createHollyHrApiClient({
+      baseUrl: "https://acme.hollyhr.com/api/v1",
+      token: "hhr_test_123",
+      fetch: fetchMock as typeof fetch,
+    });
+
+    const response = await client.get<{ data: { id: string } }>("/people/7k3m9q2vx6rt");
+
+    expect(response.etag).toBeUndefined();
+    expect(response.headers.get("etag")).toBe('W/"etag-1"');
   });
 
   it("throws typed API errors with request id metadata", async () => {

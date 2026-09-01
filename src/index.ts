@@ -127,6 +127,16 @@ function responseRateLimit(headers: Headers): HollyHrRateLimit | undefined {
   return Object.values(rateLimit).some(Boolean) ? rateLimit : undefined;
 }
 
+function responseWriteEtag(headers: Headers): string | undefined {
+  const providerResistant = headers.get("hollyhr-resource-etag")?.trim();
+  if (providerResistant && !providerResistant.startsWith("W/")) {
+    return providerResistant;
+  }
+
+  const standard = headers.get("etag")?.trim();
+  return standard && !standard.startsWith("W/") ? standard : undefined;
+}
+
 async function responseJson(response: Response): Promise<unknown> {
   const text = await response.text();
   if (!text) {
@@ -205,7 +215,7 @@ export class HollyHrApiClient {
         response.headers.get("x-request-id") ??
         response.headers.get("x-correlation-id") ??
         undefined,
-      etag: response.headers.get("etag") ?? undefined,
+      etag: responseWriteEtag(response.headers),
       rateLimit: responseRateLimit(response.headers),
     };
   }
