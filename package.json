@@ -1,6 +1,6 @@
 {
   "name": "@hollyhr/api-client",
-  "version": "0.1.0-preview.5",
+  "version": "0.1.0-preview.6",
   "description": "Official TypeScript client for the HollyHR public API.",
   "type": "module",
   "sideEffects": false,
